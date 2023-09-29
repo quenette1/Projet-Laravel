@@ -1,66 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Projet laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Festival de ma région
 
-## About Laravel
+## Descripton
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Ce projet a pour objectif de créer un site qui permet de montrer les festivales et les concerts de la région
+Il se subdivise en plusieurs petites parties composé
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* Inscrition Visiteur
+* Inscription Organisateurs
+* Ajout d'évenement
+* Chat de discussion par évenement
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Incription Visteurs
 
-## Learning Laravel
+Remplissage d'un formulaire permettant l'inscription d'un visteur
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* Mail
+* Mot de passe
+* Confirmation mot de passe
+* Nom
+* Prénom
+* Photo de profil
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Inscription Organisateur
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Formulaire composé de plusieurs champs
 
-## Laravel Sponsors
+* Mail
+* Mot de passe
+* Confirmation mot de passe
+* Nom
+* Prénom
+* Nom de l'organisation
+* Photo de profil
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Ajout d'évènement
 
-### Premium Partners
+Formulaire composé de plusieurs champs qui permet la création d'évenement
+Les évenement ne peuvent être créer que par des organisateurs
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+* Nom de l'évenement
+* Description de l'évenement (photo, images, texte, lien etc) (importation d'un docx ou d'un pdf peut être)
+* Emplacement de l'évenement
 
-## Contributing
+## Chat de discussion de l'évenement
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Un chat lié à un évenement qui permet aux utilisateurs de discuter entre eux et avec l'organsateur
+Les message de l'organiateur doivent être plus visible que ceux des utilisateurs lambda
+Les organsateurs peuvent mute quelqu'un ou même le désinscrire
 
-## Code of Conduct
+## Sytème d'inscription
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Envoie sur une page de confirmation d'inscription. Une fois inscris l'utilisateur pourra accéder au chat.
 
-## Security Vulnerabilities
+## Evolution dans le temps
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* Rôle d'admin afin que des utlisateurs inscris à un évenement puissent gérer les chats
+* Localisaton via google Map pour pouvoir avoir la localisation d'un évenement en cliquant sur une icône
+* Système d'amis avec des notifications pour si un de tes amis est inscris à un évenement
+* 
