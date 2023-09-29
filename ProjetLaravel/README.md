@@ -59,4 +59,3 @@ Envoie sur une page de confirmation d'inscription. Une fois inscris l'utilisateu
 * Rôle d'admin afin que des utlisateurs inscris à un évenement puissent gérer les chats
 * Localisaton via google Map pour pouvoir avoir la localisation d'un évenement en cliquant sur une icône
 * Système d'amis avec des notifications pour si un de tes amis est inscris à un évenement
-* 
