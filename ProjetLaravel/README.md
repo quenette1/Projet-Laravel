@@ -30,8 +30,7 @@ Formulaire composé de plusieurs champs
 * Mail
 * Mot de passe
 * Confirmation mot de passe
-* Nom
-* Prénom
+* Evenements précédents
 * Nom de l'organisation
 * Photo de profil
 
