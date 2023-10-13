@@ -8,6 +8,15 @@
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
+        <!-- Role -->        
+        <div>
+            <x-input-label for="role" :value="__('Role')" /> 
+            <select name="role" id="role" class="form-control">
+                <option value="Organisateur">Organisateur</option>
+                <option value="Visiteur">Visiteur</option>
+            </select>
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+        </div>
 
         <!-- Email Address -->
         <div class="mt-4">
