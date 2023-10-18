@@ -10,11 +10,12 @@
     </head>
     <body class="antialiased">
         <!-- Banderole en Haut -->
-        <div class="flex w-screen h-28 bg-beige items-center px-4">
+        <div class="flex w-screen h-28 bg-beige items-center px-4 space-x-4">
             <h1 class="flex-1 text-white text-2xl">Ma région danse !</h1>
             @auth
-                <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-            
+
+                <a href="{{ url('/dashboard') }}" class="font-semibold hover:text-gray-900 text-white dark:hover:text-grey focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Tableau de bord</a>
+                <a href="{{ url('/profile') }}" class="font-semibold hover:text-yellow-300 text-white">{{ auth()->user()->name }}</a>
             @else
                 <div calss="flex-1 space-x-10">
                     <a href="{{ route('login')}}" class="bg-jaune-pastis rounded-2xl p-4">Se connecter</a>

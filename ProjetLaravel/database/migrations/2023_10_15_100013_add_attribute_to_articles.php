@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('articles', function (Blueprint $table) {
             $table->string('description',1000);
             $table->string('emplacement',50);
-            $table->unsignedBigInteger('idOrganisateur');
+            $table->unsignedBigInteger('idOrganisateur')->index();
         });
     }
 
