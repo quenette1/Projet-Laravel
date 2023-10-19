@@ -42,7 +42,7 @@ class ArticleController extends Controller
             "emplacement" => $request->emplacement,
         ]);
 
-        return redirect(route('articles.index')) 
+        return redirect(route('articles.index'));
     }
 
     /**
