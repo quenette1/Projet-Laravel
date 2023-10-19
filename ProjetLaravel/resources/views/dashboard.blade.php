@@ -8,12 +8,14 @@
 
     <div class="py-12">
         @if($role == "Organisateur")
-            <div class="flex item-center justify-center max-w-7xl mx-auto sm:px-6 lg:px-8 bg-grey-900">
-                <x-primary-button class="text-black bg-white space-y-5 font-sans w-72 h-72">
-                    <div class="text-xl">Ajouter Article</div>
-                    <div class="text-3xl text-blue-400">+</div>
-                </x-premiary-button>
-            </div>
+            <a href="{{url('/article/create')}}">
+                <div class="flex item-center justify-center max-w-7xl mx-auto sm:px-6 lg:px-8 bg-grey-900">
+                    <x-primary-button class="bg-white space-y-5 font-sans w-72 h-72" x-data='{test:true}' x-on:click.prevent="$test=false">
+                        <div class="text-xl text-black">Ajouter Article</div>
+                        <div class="text-3xl text-blue-400">+</div>
+                    </x-premiary-button>
+                </div>
+            </a>
         @endif
     </div>
 </x-app-layout>

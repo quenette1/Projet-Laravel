@@ -19,9 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name("home");
 
-Route::get('/evenement', function(){
-    return view('form.form-evenement');
-});
 
 Route::get('/dashboard', [RoleController::class, 'getRole'])
     ->middleware(['auth', 'verified'])
@@ -33,11 +30,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('/post')->group(function () {
-    Route::get('/article', [ProfileController::class, 'edit'])->name('article.edit');
-    
+Route::resource('articles',ArticleController::class)->parameters([
+    'articles' => 'article',
+]);
 
-});
 
 
 require __DIR__.'/auth.php';
