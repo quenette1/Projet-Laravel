@@ -13,6 +13,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'LaBelleAurore': ['"La Belle Aurore"', 'sans-serif']
             },
             backgroundColor: {
                 'beige' : '#ed8f85',

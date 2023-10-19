@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("home");
 
 Route::get('/evenement', function(){
     return view('form.form-evenement');
@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('/post')->group(function () {
     Route::get('/article', [ProfileController::class, 'edit'])->name('article.edit');
+    
 
 });
 

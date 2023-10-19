@@ -1,30 +1,24 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Tableau de bord') }}
         </h2>
     </x-slot>
     
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    @if($role == "Organisateur")
-                        <div id="creerArticle" style="cursor: pointer;" class="bg-grey w-1/2 h-1/2">
-                            <p>Test</p>
-                        </div>
-                    @endif
-                </div>
+        @if($role == "Organisateur")
+            <div class="flex item-center justify-center max-w-7xl mx-auto sm:px-6 lg:px-8 bg-grey-900">
+                <x-primary-button class="text-black bg-white space-y-5 font-sans w-72 h-72">
+                    <div class="text-xl">Ajouter Article</div>
+                    <div class="text-3xl text-blue-400">+</div>
+                </x-premiary-button>
             </div>
-        </div>
+        @endif
     </div>
 </x-app-layout>
 
 <script>
-    function redirectToEventCreation() {
-        window.location.href = "{{ url('/evenement') }}"; // Replace with the actual URL for event creation
-    }
     document.getElementById('creerArticle').addEventListener('click', function() {
         // Utilisez JavaScript pour envoyer une requête POST vers la route '/creer-utilisateur'
         fetch('/creer-utilisateur', {
