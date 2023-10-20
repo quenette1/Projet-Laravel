@@ -28,35 +28,40 @@
         @auth
             <div class="flex flex-line justify-center items-center space-x-8 pt-8">
                 @foreach($articles as $article)
-                    <div class="flex flex-wrap flex-col bg-gray-300 justify-left p-4 border-4 border-gray-300 hover:border-blue-600 w-fit rounded-xl space-y-2">
-                        <div class="bg-grey text-2xl font-bold">
-                            {{$article->name}}
+                    <form class="" id="article" action="{{route('articles.show',$article)}}" method="POST">
+                        @csrf
+                        @method("post")
+                        <input class="hidden"></input>
+                        <div class="flex flex-wrap flex-col bg-gray-300 justify-left p-4 border-4 border-gray-300 hover:border-blue-600 w-fit rounded-xl space-y-2" type="submit">
+                            <div class="bg-grey text-2xl font-bold">
+                                {{$article->name}}
+                            </div>
+                            <div>
+                                {{$article->description}}
+                            </div>
+                            <div class="text-blue-700">
+                                {{$article->emplacement}}
+                            </div>
+                            <div class="flex flex-line space-x-2">
+                                <form action="{{route('articles.destroy',$article)}}" method="POST" >
+                                    @csrf
+                                    @method("delete")
+                                    <input class="hidden"></input>
+                                    <x-secondary-button class="flex justify-left items-left " type="submit">
+                                        <div class="">Supprimer</div>
+                                    </x-secondary-button>
+                                </form>
+                                <form action="{{route('articles.update',$article)}}" method="POST" >
+                                    @csrf
+                                    @method("patch")
+                                    <input class="hidden"></input>
+                                    <x-secondary-button class="flex justify-left items-left " type="submit">
+                                        <div class="">Modifier</div>
+                                    </x-secondary-button>
+                                </form>
+                            </div>
                         </div>
-                        <div>
-                            {{$article->description}}
-                        </div>
-                        <div class="text-blue-700">
-                            {{$article->emplacement}}
-                        </div>
-                        <div class="flex flex-line space-x-2">
-                            <form action="{{route('articles.destroy',$article)}}" method="POST" >
-                                @csrf
-                                @method("delete")
-                                <input class="hidden"></input>
-                                <x-secondary-button class="flex justify-left items-left " type="submit">
-                                    <div class="">Supprimer</div>
-                                </x-secondary-button>
-                            </form>
-                            <form action="{{route('articles.update',$article)}}" method="POST" >
-                                @csrf
-                                @method("patch")
-                                <input class="hidden"></input>
-                                <x-secondary-button class="flex justify-left items-left " type="submit">
-                                    <div class="">Modifier</div>
-                                </x-secondary-button>
-                            </form>
-                        </div>
-                    </div>
+                    </form>
                 @endforeach
             </div>
         @endauth
