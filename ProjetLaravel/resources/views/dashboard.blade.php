@@ -6,7 +6,7 @@
     </x-slot>
     <div class="py-12">
         @if($role == "Organisateur")
-          <div class="flex flex-col justify-bottom items-center space-x-1">
+          <div class="flex flex-col justify-bottom items-center space-x-1 space-y-8">
             <div class="flex item-center justify-center max-w-7xl mx-auto sm:px-6 lg:px-8 bg-grey-900" type="button">
                 <x-primary-button data-modal-target="defaultModal"  data-modal-toggle="defaultModal" class="bg-white space-y-5 font-sans w-72 h-72">
                     <div class="text-xl text-black">Ajouter Article</div>

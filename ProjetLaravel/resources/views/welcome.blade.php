@@ -21,7 +21,7 @@
         </div>
         <div>
             @else
-                <div calss="flex-1 space-x-10">
+                <div class="flex-1 space-x-10">
                     <a href="{{ route('login')}}" class="bg-jaune-pastis rounded-2xl p-4">Se connecter</a>
                     <a href="{{ route('register')}}" class="bg-jaune-pastis rounded-2xl p-4">S'incrire</a>
                 </div>
@@ -29,14 +29,19 @@
         </div>
         <div class="flex flex-line justify-center items-center space-x-8 pt-8">
             @foreach($articles as $article)
-                <div class="flex flex-col bg-gray-300 justify-left p-4 border-4 border-gray-300 hover:border-blue-600 w-28 rounded-xl">
+                <div class="flex flex -wrap flex-col bg-gray-300 justify-left p-4 border-4 border-gray-300 hover:border-blue-600 w-28 rounded-xl">
                     <div class="bg-grey text-2xl font-bold">
                         {{$article->name}}
                     </div>
                     <div>
                         {{$article->description}}
                     </div>
-                    <div class="text-blue-700">{{$article->emplacement}}</div>
+                    <div class="text-blue-700">
+                        {{$article->emplacement}}
+                    </div>
+                    <x-secondary-button href="{{route('articles.destroy',['article',$article])}}" class="flex justify-left items-left ">
+                        <div class="">Del</div>
+                    </x-secondary-button>
                 </div>
             @endforeach
         </div>

@@ -92,8 +92,6 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        // On supprime l'image existant
-        Storage::delete($article->picture);
 
         // On les informations du $post de la table "posts"
         $article->delete();
