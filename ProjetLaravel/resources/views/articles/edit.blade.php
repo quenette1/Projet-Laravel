@@ -1,22 +1,31 @@
 <div class="bg-white p-8 rounded-lg shadow-lg space-y-2">
     <h2 class="text-2xl font-semibold">Créer un nouvel article</h2>
 
-    <form action="{{ route('articles.store') }}" calss="space-y-2" method="POST">
+    <form action="{{ route('articles.store') }}" calss="space-y-2" method="POST" id="creationArticle">
         @csrf
 
         <div class="space-y-1">
             <label for="name" class="block text-sm font-medium text-gray-700">Titre de l'évènement</label>
             <input type="text" name="name" id="name" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            @error('name')
+                <p class="text-red-400">{{$message}}</p>
+            @enderror
         </div>
 
         <div class="space-y-1">
             <label for="description" class="block text-sm font-medium text-gray-700">Description de l'évènement</label>
             <textarea name="description" id="description" rows="4" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+            @error('description')
+                <p class="text-red-400">{{$message}}</p>
+            @enderror
         </div>
 
         <div class="space-y-1">
-            <label for="emplacement" class="block text-sm font-medium text-gray-700">Emplacement de l'évènement</label>
+            <label for="emplacement" class="block text-sm font-medium text-gray-700" id = "emplacement">Emplacement de l'évènement</label>
             <textarea name="emplacement" id="emplacement" rows="1" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+            @error('emplacement')
+                <p class="text-red-400">{{$message}}</p>
+            @enderror
         </div>
 
         <div class="flex justify-end">
@@ -24,3 +33,4 @@
         </div>
     </form>
 </div>
+
