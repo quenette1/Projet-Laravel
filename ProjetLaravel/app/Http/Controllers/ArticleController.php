@@ -12,7 +12,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $article = Article::latest()->get();
+        $articles = Article::latest()->get();
         return view("articles.index", compact("articles"));
     }
 
@@ -36,13 +36,15 @@ class ArticleController extends Controller
 
         ]);
 
-        Article::create([
+        $article = Article::create([
             "name" => $request->name,
             "description" => $request->description,
             "emplacement" => $request->emplacement,
+            "idOrganisateur" => $request->user()->id,
         ]);
 
-        return redirect(route('articles.index'));
+        $article->save();
+        return redirect(route('articles.show', $article));
     }
 
     /**

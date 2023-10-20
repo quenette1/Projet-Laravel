@@ -8,30 +8,32 @@
 
     <div class="py-12">
         @if($role == "Organisateur")
-            <a href="{{route('articles.create')}}">
-                <div class="flex item-center justify-center max-w-7xl mx-auto sm:px-6 lg:px-8 bg-grey-900">
-                    <x-primary-button class="bg-white space-y-5 font-sans w-72 h-72" x-data='{test:true}' x-on:click.prevent="$test=false">
-                        <div class="text-xl text-black">Ajouter Article</div>
-                        <div class="text-3xl text-blue-400">+</div>
-                    </x-premiary-button>
-                </div>
-            </a>
+          <div class="flex flex-col justify-bottom items-center space-x-1">
+            <div class="flex item-center justify-center max-w-7xl mx-auto sm:px-6 lg:px-8 bg-grey-900" type="button">
+                <x-primary-button data-modal-target="defaultModal"  data-modal-toggle="defaultModal" class="bg-white space-y-5 font-sans w-72 h-72">
+                    <div class="text-xl text-black">Ajouter Article</div>
+                    <div class="text-3xl text-blue-400">+</div>
+                </x-primary-button>
+            </div>
+            <div id="defaultModal" class="hidden flex tems-center justify-center">
+                @include('articles.edit')
+            </div>
+          </div>
         @endif
     </div>
 </x-app-layout>
-
 <script>
-    document.getElementById('creerArticle').addEventListener('click', function() {
-        // Utilisez JavaScript pour envoyer une requête POST vers la route '/creer-utilisateur'
-        fetch('/creer-utilisateur', {
-            method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}', // Assurez-vous de transmettre le jeton CSRF
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Faites quelque chose avec la réponse du serveur, si nécessaire
-        });
+  const modalButtons = document.querySelectorAll("[data-modal-target]");
+  const modals = document.querySelectorAll(".modal");
+
+  modalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const targetModal = document.getElementById(button.dataset.modalTarget);
+
+      if (targetModal) {
+        targetModal.classList.toggle("hidden");
+      }
     });
+  });
+  
 </script>
