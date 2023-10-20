@@ -52,7 +52,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return view("articles.show", compact("article"));
+        return view("articles.index", compact("article"));
     }
 
     /**
@@ -84,7 +84,7 @@ class ArticleController extends Controller
         ]);
     
         // 4. On affiche le Post modifié : route("posts.show")
-        return redirect(route("articles.show", $post));
+        return redirect(route("articles.index", $post));
     }
 
     /**
