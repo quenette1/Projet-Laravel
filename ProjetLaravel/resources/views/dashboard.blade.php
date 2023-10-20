@@ -4,8 +4,6 @@
             {{ __('Tableau de bord') }}
         </h2>
     </x-slot>
-    
-
     <div class="py-12">
         @if($role == "Organisateur")
           <div class="flex flex-col justify-bottom items-center space-x-1">

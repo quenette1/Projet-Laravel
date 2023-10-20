@@ -13,7 +13,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::latest()->get();
-        return view("articles.index", compact("articles"));
+        return view("welcome")->with("articles", $articles);
     }
 
     /**
@@ -44,7 +44,7 @@ class ArticleController extends Controller
         ]);
 
         $article->save();
-        return redirect(route('articles.show', $article));
+        return redirect(route('articles.index'));
     }
 
     /**
